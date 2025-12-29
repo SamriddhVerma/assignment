@@ -16,13 +16,13 @@ function ShowSchools() {
 	return (
 		<>
 			<div className='p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-				{schools.map((school) => (
+				{schools.map((school, idx) => (
 					<div
-						key={school.id}
+						key={idx}
 						className='border border-gray-300 rounded-md p-4'
 					>
 						<img
-							src={`/schools/${school.image}`}
+							src={`/schoolImages/${school.image}`}
 							onError={(e) => {
 								e.target.src = '/default_school.svg';
 							}}

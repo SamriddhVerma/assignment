@@ -56,7 +56,7 @@ function AddSchoolForm() {
 
 	return (
 		<form
-			className='flex flex-col space-y-2 p-5 justify-center items-center border border-gray-300 rounded-md'
+			className='flex flex-col space-y-3 p-5 justify-center items-center border border-gray-300 rounded-md'
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			{imageSrc && (
@@ -70,6 +70,7 @@ function AddSchoolForm() {
 			<label>
 				Name <br />
 				<input
+					className={`border ${errors.Name && 'border-red-500'}`}
 					placeholder='Name'
 					{...register('Name', { required: true })}
 				/>
@@ -78,6 +79,7 @@ function AddSchoolForm() {
 			<label>
 				Address <br />
 				<input
+					className={`border ${errors.Address && 'border-red-500'}`}
 					placeholder='Address'
 					{...register('Address', { required: true })}
 				/>
@@ -86,6 +88,7 @@ function AddSchoolForm() {
 			<label>
 				City <br />
 				<input
+					className={`border ${errors.City && 'border-red-500'}`}
 					placeholder='City'
 					{...register('City', { required: true })}
 				/>
@@ -94,6 +97,7 @@ function AddSchoolForm() {
 			<label>
 				State <br />
 				<input
+					className={`border ${errors.State && 'border-red-500'}`}
 					placeholder='State'
 					{...register('State', { required: true })}
 				/>
@@ -102,6 +106,7 @@ function AddSchoolForm() {
 			<label>
 				Contact <br />
 				<input
+					className={`border ${errors.Contact && 'border-red-500'}`}
 					placeholder='Contact'
 					{...register('Contact', {
 						required: true,
@@ -119,6 +124,7 @@ function AddSchoolForm() {
 			<label>
 				Email ID <br />
 				<input
+					className={`border ${errors.Email && 'border-red-500'}`}
 					type='email'
 					placeholder='Email ID'
 					{...register('Email', { required: true })}
@@ -133,14 +139,14 @@ function AddSchoolForm() {
 			<label>
 				School Image <br />
 				<input
+					className='border'
 					type='file'
 					accept='image/*'
-					{...register('schoolImage', { required: true })}
+					{...register('schoolImage')}
 				/>
 			</label>
-			{errors.schoolImage && <span>This field is required</span>}
 
-			<button>Submit</button>
+			<button className='w-full bg-blue-200 rounded-lg py-2'>Submit</button>
 		</form>
 	);
 }
