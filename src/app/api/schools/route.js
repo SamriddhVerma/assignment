@@ -21,7 +21,7 @@ export async function POST(req) {
 	const { name, address, city, state, contact, image, email_id } =
 		await req.json();
 
-	const filename = `${name.replace(/\s+/g, '_')}.${
+	const filename = `${Date.now()}.${
 		image.split(',')[0].split('/')[1].split(';')[0]
 	}`;
 

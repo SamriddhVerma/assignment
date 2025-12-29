@@ -22,7 +22,7 @@ function ShowSchools() {
 						className='border border-gray-300 rounded-md p-4'
 					>
 						<img
-							src={`/schoolImages/${school.image}`}
+							src={`/api/schools/images/?name=${school.image}`}
 							onError={(e) => {
 								e.target.src = '/default_school.svg';
 							}}

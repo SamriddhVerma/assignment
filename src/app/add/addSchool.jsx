@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 
 function AddSchoolForm() {
@@ -8,6 +9,7 @@ function AddSchoolForm() {
 		watch,
 		formState: { errors },
 	} = useForm();
+	const router = useRouter();
 	const onSubmit = (data) => {
 		console.log(data);
 		const name = data['Name'];
@@ -40,6 +42,7 @@ function AddSchoolForm() {
 				.then((response) => {
 					if (response.ok) {
 						alert('School added successfully!');
+						router.replace('/');
 					} else {
 						alert('Failed to add school.');
 					}
