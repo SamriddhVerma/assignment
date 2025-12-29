@@ -14,7 +14,7 @@ export async function GET(req) {
 
 export async function POST(req) {
 	const sql = `
-    INSERT INTO schools.schools (name,address,city,state,contact,image,email_id)
+    INSERT INTO schools (name,address,city,state,contact,image,email_id)
 	VALUES (?,?,?,?,?,?,?);
     `;
 
