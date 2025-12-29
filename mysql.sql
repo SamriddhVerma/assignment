@@ -1,4 +1,4 @@
-CREATE TABLE schools.schools (
+CREATE TABLE schools (
 	id INT auto_increment NOT NULL,
 	name VARCHAR(511) NULL,
 	address VARCHAR(511) NULL,
